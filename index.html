@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="js/javascript.js"></script>
+
+    <title>DashBoard</title>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-light fixed-top bg-light flex-md-nowrap p-0 ">        
+        <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">AvaBoards</a>
+        <input class="form-control form-control-dark w-80" type="text" placeholder="Procurar" aria-label="Search">
+        <a class="nav-link" href="#">Sair</a>
+        </li>
+        </ul>
+        </nav>
+
+                <br><br><br>
+
+
+    <div class="wrapper">
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>DashBoard</h3>
+            </div>
+
+            <ul class="list-unstyled components">
+           
+                <li class="active">
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" >Pagina Inicial</a>
+
+                </li>
+                <li>
+                    <a href="#">Batimento</a>           
+                </li>
+                <li>
+                    <a href="#">Analitico</a>
+                </li>
+                <li>
+                    <a href="#">Relatórios</a>
+                </li>
+            </ul>   
+        </nav>
+
+        <!-- Page Content Holder -->
+        <div id="content">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="navbar-btn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-align-justify"></i>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav ml-auto">
+
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+    <!--Canvas para desenhar usando JS-->
+    <button class="btn btn-sm btn-outline-secondary">Exportar</button>
+    <canvas class="bar-chart"></canvas>
+       
+    <!-- Incluir cdnjs do site-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+    
+    
+    <script>
+        var ctx = document.getElementsByClassName("bar-chart");
+
+        //type, data e options
+        var chartGraph = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                datasets: [{
+                    label: "Atendimentos Realizados 2019",                   
+                    data: [4200, 5042, 4800, 6774, 5484, 5145, 4587, 3451, 4245, 4841, 5690, 6800],
+                    borderWitdh: 15,
+                    borderColor: 'rgba(77,166,253,0.85)',
+                    backgroundColor: 'rgba(77,166,253,0.85)'
+                }             
+                ]
+            }
+
+        });
+
+    </script>
+    
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th>Data</th>
+      <th>Demanda</th>
+      <th>Capacidade</th>
+      <th>Atendimento Planejado</th>
+      <th>Atendimento Realizado</th>
+      <th>Desvio</th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+
+<script>
+
+    var json = {
+        data: [
+        {
+       "Data": "Jan",
+       "Demanda": 4000,
+       "Capacidade": 3330,
+       "AtendimentoPlanejado": 3330,
+       "AtendimentoRealizado": 4200,
+       "Desvio": 1460
+     },
+     {
+        "Data": "Feb",
+       "Demanda": 5000,
+       "Capacidade": 6000,
+       "AtendimentoPlanejado": 5000,
+       "AtendimentoRealizado": 5042,
+       "Desvio": 1000
+     },
+     {
+        "Data": "Mar",
+       "Demanda": 6000,
+       "Capacidade": 7000,
+       "AtendimentoPlanejado": 6000,
+       "AtendimentoRealizado": 4800,
+       "Desvio": 1460
+     },
+     {
+        "Data": "Apr",
+       "Demanda": 4000,
+       "Capacidade": 2330,
+       "AtendimentoPlanejado": 3530,
+       "AtendimentoRealizado": 6774,
+       "Desvio": 1460
+     },
+     {
+        "Data": "May",
+       "Demanda": 4000,
+       "Capacidade": 3330,
+       "AtendimentoPlanejado": 3330,
+       "AtendimentoRealizado": 5484,
+       "Desvio": 1460
+     },
+     {
+        "Data": "Jun",
+       "Demanda": 74747,
+       "Capacidade": 5114,
+       "AtendimentoPlanejado": 6585,
+       "AtendimentoRealizado": 5145,
+       "Desvio": 1258
+     },
+     {
+        "Data": "Jul",
+       "Demanda": 5800,
+       "Capacidade": 5855,
+       "AtendimentoPlanejado": 5484,
+       "AtendimentoRealizado": 4587,
+       "Desvio": 3698
+       },
+       {
+       "Data": "Aug",
+       "Demanda": 4800,
+       "Capacidade":2230,
+       "AtendimentoPlanejado": 3740,
+       "AtendimentoRealizado": 3451,
+       "Desvio": 5471
+    },
+    {
+        "Data": "Sep",
+       "Demanda": 5400,
+       "Capacidade": 3330,
+       "AtendimentoPlanejado": 5430,
+       "AtendimentoRealizado": 4245,
+       "Desvio": 8960
+},
+{
+        "Data": "Oct",
+       "Demanda": 6000,
+       "Capacidade": 3330,
+       "AtendimentoPlanejado": 3450,
+       "AtendimentoRealizado": 4841,
+       "Desvio": 8540
+},
+{
+        "Data": "Nov",
+       "Demanda": 5000,
+       "Capacidade": 3645,
+       "AtendimentoPlanejado": 6330,
+       "AtendimentoRealizado": 5690,
+       "Desvio": 6954
+},
+{
+        "Data": "Dec",
+       "Demanda": 8000,
+       "Capacidade": 3550,
+       "AtendimentoPlanejado": 8000,
+       "AtendimentoRealizado": 6800,
+       "Desvio": 2000
+},
+
+      ]
+     };
+     
+     //console.log(json);
+     for(var i=0;i< json.data.length; i++){
+       var html = "<tr>";
+       html +="<td>"+json.data[i].Data+"</td>";
+       html +="<td>"+json.data[i].Demanda+"</td>";
+       html +="<td>"+json.data[i].Capacidade+"</td>";
+       html +="<td>"+json.data[i].AtendimentoPlanejado+"</td>"
+       html +="<td>"+json.data[i].AtendimentoRealizado+"</td>"
+       html +="<td>"+json.data[i].Desvio+"</td>";
+       html +="</tr>";
+       $('table tbody').append(html);
+     }
+     </script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+                $(this).toggleClass('active');
+            });
+        });
+    </script>
+
+</body>
+</html>
