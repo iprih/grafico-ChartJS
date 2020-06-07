@@ -11,7 +11,7 @@ Gráfico: Criar gráfico de dados (Cartesiano, com colunas) a partir da tabela a
 
 Resultado Final:
 
-https://www.youtube.com/watch?v=bBuCjA4P6lo
+https://youtu.be/PzlwTgaqfXM
 
 
 
